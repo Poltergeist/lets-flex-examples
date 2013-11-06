@@ -1,0 +1,8 @@
+extends /layouts/_default
+
+block content
+  .wrap.example2
+    - for (var i = 0; i < 13; ++i) {
+      .item= i
+        span Surprise
+    - }

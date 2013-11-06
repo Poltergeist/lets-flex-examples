@@ -1,0 +1,53 @@
+.wrap
+  display: flex
+.example1
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  .item
+    flex: 0 1 300px
+    box-sizing: border-box
+    border: 1px solid #999
+    margin: 5px
+.example2
+  .item
+    flex: 1
+    -webkit-transition: all .5s
+    span
+      display: inline-block
+      margin: 0 15px
+      opacity: 0
+      -webkit-transition: all 0.5s
+    &:hover
+      flex: 3
+      span
+        display: inline-block
+        opacity: 1
+.example3
+  .item
+    flex: 1
+    cursor: pointer;
+    &.active
+      order: -1
+      background: fade-out(red, 0.7)
+.example4
+  flex-direction: row
+  main, nav, aside
+    border: 1px solid black
+  main
+    flex: 1 600px
+    margin: 0 10px
+  nav, aside
+    flex: 1 150px
+  nav
+    order: -1
+@media (max-width: 750px)
+  .example4
+    flex-direction: column
+    main
+      margin: 0
+    main, nav, aside
+      flex: 1
+      margin: 15px 0
+    nav
+      order: 1
